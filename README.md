@@ -29,7 +29,7 @@ npm run build
       <NoticeBar
           class="notice-bar"
           has-icon bar-color="rgba(255,255,255,0.5)"
-          :notice-list="noticeList"
+          :notice-list="notices"
           time-str
          ></NoticeBar>
     </div>	
