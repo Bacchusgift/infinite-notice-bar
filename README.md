@@ -3,32 +3,28 @@
 > 无限滚动的消息通知栏,简单实用,适用于任意场景,长度高度可定制 
 
 - 使用方式:
+
   - 一个条完整的通知由下面的json组成 
 
   - ```javascript
     {
-        name:"玩家姓名",
-        icon:"马化腾",
-        action:"得到",
+        name:"马化腾",
+        icon:"http://.......",
+        action:"得到", // 可以没有,将会被默认替代,也可以在插槽中直接书写想要的action关键字
         content:"法拉利",
         timeStr:"1秒前"
     }
-  	```
-  	- 一个简单的通知仅仅是一个数组,包含消息字符串
-   - ```javascript
-    ["哈哈哈","哈哈哈是"]
-    ``` 
-  
-  		<img src="https://iule-app.oss-cn-hangzhou.aliyuncs.com/img/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202019-07-16%20%E4%B8%8B%E5%8D%887.00.54.png">    就像这样  !
-	
-		
-	- 将src目录下,infinite-notice-bar.vue 拷贝出来
-  - 放到自己的目录
-  - 页面中引入此组件
-  - 如下
+    ```
 
+<img src="https://iule-app.oss-cn-hangzhou.aliyuncs.com/img/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202019-07-16%20%E4%B8%8B%E5%8D%887.00.54.png">    就像这样  !
+    
 
-  ```html
+- 将src目录下,infinite-notice-bar.vue 拷贝出来
+- 放到自己的目录
+- 页面中引入此组件
+- 如下
+
+```html
   <template>
     <div>
       // 建议放在任意位置使用绝对定位将通知栏定位 
@@ -40,7 +36,7 @@
           :notice-list="noticeList" // 可以传入一个复杂的list,不可以和simple-list共存
           :simple-list="simpleList" // 可以传入一个简单的list,不可以和notice-list共存
           time-str // 默认有时间戳文字 ( 3s前 ,1s前 这样) 
-         ></NoticeBar>
+         >//直接写action文字可以直接替换(action看说明文档)</NoticeBar>
     </div>	
   </template>
   <script>
@@ -74,7 +70,7 @@
   </script>
   <style scoped>
   </style>
-  ```
+```
 
 |     字段      |                             含义                             |                             示例                             |         默认值          |
 | :-----------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :---------------------: |
@@ -87,7 +83,38 @@
 | content-color |          奖品文字颜色(如果是simple模式,此字段失效)           |             `Rgba(255,255,255,1)` 或 `#FFFFFF `              |        `#c95354`        |
 |     width     |                         通知栏的长度                         |                      `85%` 或 `9rem` 或                      |         `9rem`          |
 |    height     |                         通知栏的高度                         |                           `1.2rem`                           |        `1.2rem`         |
+|    action     |                用户领取动作(如 xx 得到了 XX)                 |                            `得到`                            |         `得到`          |
+
+Tips: 
+
+ 插槽写的东西会自动替换掉action的默认文字! 
+
+```html
+<NoticeBar
+ class="notice-bar"
+ :notice-list="noticeList"
+  timeStr
+ >
+  领取了
+</NoticeBar>
+```
+
+如上, 你的noticeList如果是这样的
+
+```javascript
+{
+	name:"柚子",
+	content:"地球",
+	icon:"http://sdsdsd.png"
+}
+```
+
+那么,你的通知将会变成:
+
+>  柚子 领取了 <span style="color:#c95354">地球</span>    2秒前
 
 
 
+------
 
+Ok~ 快来使用吧
