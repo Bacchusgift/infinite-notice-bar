@@ -81,7 +81,7 @@
       },
       fontSize :{
         type: String,
-        default: '0.3rem'
+        default: '35%'
       }
     },
     created () {
