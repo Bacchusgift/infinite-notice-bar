@@ -15,16 +15,16 @@
     }
   	```
   	- 一个简单的通知仅仅是一个数组,包含消息字符串
-  	  - ```javascript
+   - ```javascript
     ["哈哈哈","哈哈哈是"]
-       
-    
+    ``` 
   	```
-  	​	<img src="https://iule-app.oss-cn-hangzhou.aliyuncs.com/img/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202019-07-16%20%E4%B8%8B%E5%8D%887.00.54.png">    就像这样  !
-  	
+  		<img src="https://iule-app.oss-cn-hangzhou.aliyuncs.com/img/%E5%B1%8F%E5%B9%95%E5%BF%AB%E7%85%A7%202019-07-16%20%E4%B8%8B%E5%8D%887.00.54.png">    就像这样  !
+		```
+		
 	- 将src目录下,infinite-notice-bar.vue 拷贝出来
-	- 放到自己的目录
-	- 页面中引入此组件
+  - 放到自己的目录
+  - 页面中引入此组件
   - 如下
 
 
